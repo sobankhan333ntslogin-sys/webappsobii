@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A fun interactive friendship page for Soban and Ishrat">
+  <title>Friendship Request 💫</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Floating particles background -->
+  <div class="particles" id="particles"></div>
+
+  <!-- STEP 1: Welcome Page -->
+  <div class="card step active" id="step1">
+    <div class="sparkle-icon">👋</div>
+    <h1 class="title">Welcome, <span class="highlight">Ishrat</span>!</h1>
+    <p class="subtitle">Before we proceed, here are the rules:</p>
+    
+    <div class="rules-box">
+      <div class="rule">
+        <span class="rule-number">01</span>
+        <span class="rule-text">You must be honest with your answer</span>
+      </div>
+      <div class="rule">
+        <span class="rule-number">02</span>
+        <span class="rule-text">No going back once you proceed</span>
+      </div>
+      <div class="rule">
+        <span class="rule-number">03</span>
+        <span class="rule-text">You must select one option below to continue</span>
+      </div>
+    </div>
+
+    <p class="choose-text">Choose one to proceed:</p>
+    <div class="options-grid">
+      <button class="option-btn" id="optionA" onclick="selectOption(this)">
+        <span class="option-emoji">👍</span>
+        <span class="option-label">I'm Ready</span>
+      </button>
+      <button class="option-btn" id="optionB" onclick="selectOption(this)">
+        <span class="option-emoji">🚀</span>
+        <span class="option-label">Let's Go</span>
+      </button>
+      <button class="option-btn" id="optionC" onclick="selectOption(this)">
+        <span class="option-emoji">😊</span>
+        <span class="option-label">Okay!</span>
+      </button>
+    </div>
+
+    <button class="proceed-btn disabled" id="proceedBtn" onclick="goToStep2()" disabled>
+      <span>Proceed</span>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+
+  <!-- STEP 2: Friendship Question -->
+  <div class="card step" id="step2">
+    <div class="sparkle-icon">🤝</div>
+    <h1 class="title fancy-title">Can we become <span class="highlight">friends</span>?</h1>
+    <p class="subtitle">This is a very important question...</p>
+    
+    <div class="friendship-buttons">
+      <button class="yes-btn" id="yesBtn" onclick="sayYes()">
+        <span class="btn-emoji">✅</span>
+        <span>Yes!</span>
+      </button>
+      <button class="no-btn" id="noBtn">
+        <span class="btn-emoji">❌</span>
+        <span>No</span>
+      </button>
+    </div>
+    <p class="hint-text" id="hintText"></p>
+  </div>
+
+  <!-- STEP 3: Congratulations -->
+  <div class="card step" id="step3">
+    <div class="confetti-container" id="confetti"></div>
+    <div class="sparkle-icon big-icon">🎊</div>
+    <h1 class="title congrats-title">Congratulations!</h1>
+    <div class="friends-badge">
+      <span class="friend-name">Soban</span>
+      <span class="heart-icon">🤝</span>
+      <span class="friend-name">Ishrat</span>
+    </div>
+    <p class="congrats-text">are <span class="highlight">friends</span> now!</p>
+    <div class="celebration-emojis">
+      <span>🎉</span><span>🥳</span><span>✨</span><span>🙌</span><span>🎊</span>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
